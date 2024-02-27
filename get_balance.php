@@ -1,14 +1,17 @@
 <?php 
 
+require_once 'dbconnection.php';
+require_once 'constants.php';
+
 //Проверка наличия параметра user_id в URL
-if (!isset($_GET['user_id'])) {
+if (!isset($_GET['USER_ID_PARAM'])) {
     // Ошибка, если параметр отсутствует
     echo json_encode(array('error'=> 'Missing user_id parameter'));
     exit;
 }
 
 // Получение значения параметра user_id
-$user_id = $_GET['user_id'];
+$user_id = $_GET['USER_ID_PARAM'];
 
 // Параметры подключения к базе данных
 $host = 'database_host';
